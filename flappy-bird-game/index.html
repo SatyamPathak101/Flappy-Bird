@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flappy Bird Game</title>
+</head>
+<body>
+    <div id="menu" class="menu">
+        <button onclick="startGame()">Start</button>
+        <button onclick="openShop()">Shop</button>
+        <button onclick="openSettings()">Settings</button>
+        <button onclick="quitGame()">Quit</button>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="endGameScreen" class="end-game-screen">
+        <div id="scoreDisplay"></div>
+        <button onclick="restartGame()">Restart</button>
+        <button onclick="quitGame()">Quit</button>
+    </div>
+
+    <div id="settingsMenu" class="settings-menu">
+        <h2>Settings</h2>
+        <label for="velocityInput">Velocity:</label>
+        <input type="number" id="velocityInput" min="1" max="20" value="5">
+
+        <label for="gravityInput">Gravity:</label>
+        <input type="number" id="gravityInput" min="0.1" max="2" step="0.1" value="0.15">
+
+        <label for="difficultySelect">Difficulty:</label>
+        <select id="difficultySelect">
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="extreme">Extreme</option>
+        </select>
+
+        <label for="colorSelect">Color Palette:</label>
+        <select id="colorSelect">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+        </select>
+
+        <button onclick="applySettings()">Apply</button>
+        <button onclick="closeSettings()">Cancel</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
